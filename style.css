@@ -28,7 +28,27 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+}
+
+#main-heading {
+    font-size: 42px;
+    text-align: center;
+    text-shadow: 2px 0 1px rgb(117, 117, 117);
+}
+
+#new-grid {
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#new-grid:hover {
+    transition: .1s;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 #buttons {
