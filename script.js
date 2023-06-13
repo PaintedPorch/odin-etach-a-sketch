@@ -33,9 +33,17 @@ newGrid.addEventListener("click", function() {
         pixel.style.width = pixelString + "%";
         container.appendChild(pixel);
     }
+
+    const gridItem = document.querySelectorAll(".grid-square");
+
+    for (let i = 0; i < gridItem.length; i++) {
+        gridItem[i].addEventListener("click", function() {
+            gridItem[i].classList.toggle("grid-square-colored");
+        })
+    }
 })
 
-MakeGrid(20);
+MakeGrid(16);
 
 const gridItem = document.querySelectorAll(".grid-square");
 
