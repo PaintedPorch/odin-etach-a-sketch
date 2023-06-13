@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 650px;
 }
 
 #container {
@@ -42,7 +43,8 @@ body {
     background-color: transparent;
     border: 2px solid black;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 #new-grid:hover {
@@ -71,7 +73,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     outline: 1px solid;
-    margin-bottom: 25px;
+    margin-bottom: 7.5%;
 }
 
 .grid-square {
