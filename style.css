@@ -38,27 +38,29 @@ body {
     text-shadow: 2px 0 1px rgb(117, 117, 117);
 }
 
-#new-grid {
-    padding: 5px 10px;
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-
-#new-grid:hover {
-    transition: .1s;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
 #buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     flex-wrap: wrap;
+    padding-top: 2%;
+}
+
+button {
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+button:hover {
+    transition: .1s;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 #grid-container {
@@ -86,7 +88,7 @@ body {
     align-items: center;
 }
 
-.grid-square-colored {
+.grid-square-black {
     background-color: black;
 }
 

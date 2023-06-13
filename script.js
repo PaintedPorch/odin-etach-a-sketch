@@ -1,8 +1,21 @@
 const container = document.getElementById("grid-container");
 const newGrid = document.getElementById("new-grid");
 const UserInterface = document.getElementById("ui");
+const click = document.getElementById("click");
+const drag = document.getElementById("drag");
 
-//Todo: Make "New Grid" button pass its value to the for-loop
+// ToDo: Make Click and Drag mode work 
+
+let clickMode = "click"; 
+
+click.addEventListener("click", function() {
+    clickMode = "click";
+});
+drag.addEventListener("click", function() {
+    clickMode = "drag";
+})
+
+console.log(clickMode);
 
 function MakeGrid(gridArea)
 {
@@ -21,6 +34,10 @@ function MakeGrid(gridArea)
 newGrid.addEventListener("click", function() {
     let canvasSize = prompt("Grid Size: ");
 
+    while (canvasSize < 2 || canvasSize > 100) {
+        canvasSize = prompt("Please Enter A Valid Grid Size: ");
+    }
+
     container.innerHTML = "";
 
     let pixelSize = 100 / canvasSize;
@@ -38,7 +55,7 @@ newGrid.addEventListener("click", function() {
 
     for (let i = 0; i < gridItem.length; i++) {
         gridItem[i].addEventListener("click", function() {
-            gridItem[i].classList.toggle("grid-square-colored");
+            gridItem[i].classList.toggle("grid-square-black");
         })
     }
 })
@@ -48,9 +65,16 @@ MakeGrid(16);
 const gridItem = document.querySelectorAll(".grid-square");
 
 for (let i = 0; i < gridItem.length; i++) {
-    gridItem[i].addEventListener("click", function() {
-        gridItem[i].classList.toggle("grid-square-colored");
-    })
+    if (clickMode == "click") {
+        gridItem[i].addEventListener("click", function() {
+            gridItem[i].classList.toggle("grid-square-black");
+        })
+    }
+    else if (clickMode == "drag") {
+        gridItem[i].addEventListener("mouseover", function() {
+            gridItem[i].classList.toggle("grid-square-black");
+        })
+    }
 }
 
 
